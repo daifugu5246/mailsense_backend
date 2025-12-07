@@ -9,6 +9,9 @@ require('dotenv').config({ override: true });
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+// Trust proxy (required for Vercel/reverse proxy)
+app.set('trust proxy', 1);
+
 // Security Middleware
 app.use(helmet());
 
